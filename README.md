@@ -55,7 +55,19 @@ Or with uvicorn directly:
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-The API will be available at `http://localhost:8000`. Interactive docs at `http://localhost:8000/docs`.
+The API will be available at `http://localhost:8000`. Interactive API docs (Swagger UI) at `http://localhost:8000/docs`, ReDoc at `http://localhost:8000/redoc`.
+
+---
+
+## Deploying to Vercel
+
+The project includes a Vercel entrypoint (`index.py`) and `vercel.json`. Deploy with the [Vercel CLI](https://vercel.com/docs/cli) or by connecting the repo in the Vercel dashboard:
+
+```bash
+vercel
+```
+
+After deployment, open `https://<your-project>.vercel.app/docs` for Swagger UI. Note: scraping endpoints require Playwright and Chromium, which are not available in Vercel’s serverless environment, so search and download will only work when run locally or on a host where Chromium can be installed.
 
 ---
 
